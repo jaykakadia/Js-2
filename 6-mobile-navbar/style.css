@@ -78,7 +78,6 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
-  overflow-x: hidden;
 }
 
 body {
@@ -243,6 +242,10 @@ body {
     /* 8px / 16px = 0.5 = 50% */
     font-size: 50%;
   }
+  body {
+    position: relative;
+    overflow-x: hidden;
+  }
 
   /* MOBILE NAVIGATION */
   .btn-mobile-nav {
@@ -262,18 +265,8 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.5s ease-in;
-
-    /* Hide navigation */
-    /* Allows NO transitions at all */
-    /* display: none; */
-
-    /* 1) Hide it visually */
     opacity: 0;
-
-    /* 2) Make it unaccessible to mouse and keyboard */
     pointer-events: none;
-
-    /* 3) Hide it from screen readers */
     visibility: hidden;
   }
 
