@@ -1,76 +1,80 @@
-*{
-    margin: 0;
-    padding: 0;
-    /* box-sizing: border-box; */
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
 }
-.container{
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
 }
-.pagination{
-    /* border: 1px solid rgba(0, 0, 0, 0.182); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.pagination {
+  /* border: 1px solid rgba(0, 0, 0, 0.182); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.pagination button{
-    padding: 10px 20px;
-    border: none;
-    color: rgba(0, 0, 0, 0.328);
-    cursor: pointer;
-    font-size: 16px;
-    background-color: inherit;
+.pagination button {
+  padding: 10px 20px;
+  border: none;
+  color: rgba(0, 0, 0, 0.328);
+  cursor: pointer;
+  font-size: 16px;
+  background-color: inherit;
 }
-.pagination button:hover{
-    color: #0056b3;
+.pagination button:hover {
+  color: #0056b3;
 }
-.pagination a{
-    padding: 10px 15px;
-    border: none;
-    color: rgba(0, 0, 0, 0.328);
-    cursor: pointer;
-    font-size: 16px;
-    background-color: inherit;
-    text-decoration: none;
-    text-align: center;
+.pagination a {
+  padding: 10px 15px;
+  border: none;
+  color: rgba(0, 0, 0, 0.328);
+  cursor: pointer;
+  font-size: 16px;
+  background-color: inherit;
+  text-decoration: none;
+  text-align: center;
 }
-.pagination a:hover{
-    color: #0056b3;
+.pagination a:hover {
+  color: #0056b3;
 }
-#prev{
-    border-radius: 5px 0 0 5px;
-    border: 1px solid rgba(0, 0, 0, 0.182);
+#prev {
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #dee2e6;
 }
-#next{
-    border-radius: 0 5px 5px 0;
-    border: 1px solid rgba(0, 0, 0, 0.182);
+#next {
+  border-radius: 0 5px 5px 0;
+  border: 1px solid #dee2e6;
+  margin-left: -1px; /* Overlap with last page number */
 }
-#pages a{
-    border: 1px solid rgba(0, 0, 0, 0.182);
-    border-right: none;
-    margin-left: -4px;
+#pages {
+  display: flex;
 }
-#pages a:first-child{
+#pages a {
+  border: 1px solid #dee2e6;
+  /* border-right: none; */
+  margin-left: -1px; /* Overlap borders */
+  /* margin-left: -4px; Old hack */
+}
+/* #pages a:first-child{
     border-left: none;
     margin-left: 0;
+} */
+.active {
+  background-color: #0d6dfd22 !important; /* Bootstrap-ish blue */
+  color: #0d6efd !important;
+  /* border-color: #0d6efd !important; */
+  z-index: 1; /* Bring to front */
+  position: relative; /* Needed for z-index */
 }
-.active{
-    background-color: #0057b334 !important;
-    color: #0056b3 !important;
-    border: 1px solid rgba(0, 0, 0, 0.182) !important;
+.cards {
+  border: 1px solid rgba(0, 0, 0, 0.182);
+  padding: 20px;
+  margin-bottom: 20px;
 }
-.cards{
-    border: 1px solid rgba(0, 0, 0, 0.182);
-    padding: 20px;
-    margin-bottom: 20px;
+.cards div {
+  display: none;
 }
-.cards div{
-    display: none;
+.active-page {
+  display: block !important;
 }
-.active-page{
-    display: block !important;
-}
-
-
-    
