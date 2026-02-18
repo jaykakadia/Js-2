@@ -4,9 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body></body>
-  <script>
-  </script>
+  <body>
+    <div class="container">
+      <div class="cards">
+        <div class="Page-1 active-page">
+          content of page 1 
+        </div>
+        <div class="Page-2">
+          content of page 2 
+        </div>
+        <div class="Page-3">
+          content of page 3 
+        </div>
+        <div class="Page-4">
+          content of page 4 
+        </div>
+        <div class="Page-5">
+          content of page 5 
+        </div>
+      </div>
+      <div class="pagination">
+        <button id="prev">Previous</button>
+        <div id="pages">
+            <a href="#" class="for-page-1 active">1</a>
+            <a href="#" class="for-page-2">2</a>
+            <a href="#" class="for-page-3">3</a>
+            <a href="#" class="for-page-4">4</a>
+            <a href="#" class="for-page-5">5</a>
+        </div>
+        <button id="next">Next</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

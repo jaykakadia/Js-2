@@ -38,13 +38,13 @@ body{
     display: none;
     margin-top: 20px;
     padding: 10px 15px;
-    color: #555;
+    color: rgba(43, 41, 41, 0.999);
     /* border: 1px solid #ccc; */
     cursor: pointer;
     /* background-color: #f1f1f1; */
 }
 strong{
-    color: #333;
+    color: rgba(0, 0, 0, 0.881);
 }
 .tab-content .active{
     display: block;
