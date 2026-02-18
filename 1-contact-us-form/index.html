@@ -1,15 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      /* write CSS here */
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
-  <script>
-    // write javascript here
-  </script>
+  <body>
+    <div class="contact-container">
+      <div class="contact-card">
+        <div class="contact-header">
+          <h1 class="contact-title">Contact sales</h1>
+          <p class="contact-description">
+            Aute magna irure deserunt veniam aliqua magna enim voluptate.
+          </p>
+        </div>
+
+        <form class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName" class="form-label">First name</label>
+              <input type="text" id="firstName" class="form-input" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName" class="form-label">Last name</label>
+              <input type="text" id="lastName" class="form-input" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="company" class="form-label">Company</label>
+            <input type="text" id="company" class="form-input" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-input" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone number</label>
+            <div class="phone-input-wrapper">
+              <select id="phone" class="country-select" required>
+                <option value="us">US</option>
+                <option value="uk">UK</option>
+                <option value="ca">CA</option>
+              </select>
+              <input
+                type="tel"
+                id="phone"
+                class="form-input phone-input"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              id="message"
+              class="form-textarea"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+
+          <div class="privacy-group">
+            <label class="toggle-switch">
+              <input type="checkbox" id="privacy" class="checkbox" required />
+              <span class="slider"></span>
+            </label>
+            <label for="privacy" class="privacy-label">
+              By selecting this, you agree to our
+              <a href="#" class="privacy-link">privacy policy</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="submit-button">Let's talk</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

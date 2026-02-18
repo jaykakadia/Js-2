@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.5;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(to top left, #28b487, #7dd56f);
+}
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.flexcontainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.8rem;
+  right: 2rem;
+  /* Use absolute positioning to create the X */
+  display: flex; /* easier centering */
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Remove default text content */
+.close-modal::before,
+.close-modal::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 2px; /* Control thickness here */
+  background-color: #888;
+  border-radius: 2px;
+}
+
+.close-modal::before {
+  transform: rotate(45deg);
+}
+
+.close-modal::after {
+  transform: rotate(-45deg);
+}
+
+.modal-logo {
+  width: 14%;
+  background-color: #d510101d;
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-self: flex-start;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.8rem;
+  color: #888;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.btn-cancel {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.btn-danger {
+  background-color: #d51010;
+  color: white;
+}
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 47%;
+
+  background-color: white;
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
