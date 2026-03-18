@@ -25,3 +25,56 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+
+const submitButton = document.querySelector(".submit-button");
+const requiredElements = document.querySelectorAll("[required]");
+
+const validateElement = (element) => {
+  if (element.type === "checkbox") {
+    if (element.checked) {
+      element.classList.remove("error");
+      element.classList.add("success");
+    } else {
+      element.classList.remove("success");
+    }
+  } else {
+    if (element.value.trim() !== "") {
+      element.classList.remove("error");
+      element.classList.add("success");
+    } else {
+      element.classList.remove("success");
+    }
+  }
+};
+
+requiredElements.forEach(element => {
+  element.addEventListener("input", () => validateElement(element));
+  element.addEventListener("change", () => validateElement(element));
+});
+
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  
+  requiredElements.forEach(element => {
+    if (element.type === "checkbox") {
+      if (!element.checked) {
+        element.classList.add("error");
+        element.classList.remove("success");
+      } else {
+        element.classList.remove("error");
+        element.classList.add("success");
+      }
+    } else {
+      if (!element.value.trim()) {
+        element.classList.add("error");
+        element.classList.remove("success");
+      } else {
+        element.classList.remove("error");
+        element.classList.add("success");
+      }
+    }
+  });
+});

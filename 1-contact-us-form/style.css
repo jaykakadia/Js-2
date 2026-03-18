@@ -101,46 +101,54 @@ body {
 
 .phone-input-wrapper {
   display: flex;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.phone-input-wrapper:focus-within {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .country-select {
   width: 80px;
   padding: 0.75rem 0.5rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  border-right: none;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border: none;
+  /* border-right: 1px solid #d1d5db; */
   font-size: 0.875rem;
   font-family: inherit;
   color: #374151;
-  background: white;
+  background: transparent;
   cursor: pointer;
-  transition: all 0.3s ease;
+  outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .country-select:focus {
   outline: none;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-  border-right: 1px solid #6366f1;
-  border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px;
 }
 
-.phone-input {
-  flex: 1;
-  border-left: none;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.phone-input-wrapper:focus-within .country-select,
+.phone-input-wrapper:has(.phone-input.success) .country-select,
+.phone-input-wrapper:has(.phone-input.error) .country-select {
+  border-right-color: transparent;
 }
-.phone-input:focus {
+
+.form-input.phone-input {
+  flex: 1;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.form-input.phone-input:focus,
+.form-input.phone-input.success:focus,
+.form-input.phone-input.error:focus {
   outline: none;
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
-  border-left: 1px solid #6366f1;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
+  box-shadow: none;
 }
 
 .form-textarea {
@@ -162,6 +170,54 @@ body {
 
 .form-textarea::placeholder {
   color: #9ca3af;
+}
+
+.form-input.error,
+.form-textarea.error {
+  border-color: #ef4444;
+}
+
+.form-input.success,
+.form-textarea.success {
+  border-color: #22c55e;
+}
+
+.phone-input-wrapper:has(.phone-input.success) {
+  border-color: #22c55e;
+}
+
+.phone-input-wrapper:has(.phone-input.error) {
+  border-color: #ef4444;
+}
+
+.form-input.error:focus,
+.form-textarea.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-input.success:focus,
+.form-textarea.success:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.phone-input-wrapper:has(.phone-input.success):focus-within {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.phone-input-wrapper:has(.phone-input.error):focus-within {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.checkbox.error + .slider {
+  box-shadow: 0 0 0 2px #ef4444;
+}
+
+.checkbox.success + .slider {
+  box-shadow: 0 0 0 2px #22c55e;
 }
 
 .privacy-group {
